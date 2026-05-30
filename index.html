@@ -9,10 +9,10 @@
     
     <style>
         :root {
-            --bg-dark: #090d16;
-            --bg-card: #131a2e;
-            --primary-neon: #00d2ff;
-            --primary-purple: #7928ca;
+            --bg-dark: #070b14;
+            --bg-card: #0f1626;
+            --primary-blue: #00d2ff;
+            --deep-blue: #0066ff;
             --text-light: #f8fafc;
             --accent-green: #22c55e;
         }
@@ -27,54 +27,58 @@
         body {
             background-color: var(--bg-dark);
             background-image: 
-                radial-gradient(at 0% 0%, rgba(0, 210, 255, 0.1) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(121, 40, 202, 0.15) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(0, 210, 255, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(0, 102, 255, 0.15) 0px, transparent 50%);
             color: var(--text-light);
             min-height: 100vh;
             padding: 20px 12px 40px 12px;
         }
 
         .wrapper {
-            max-width: 540px;
+            max-width: 500px;
             margin: 0 auto;
         }
 
-        /* LOGO & HEADER STYLING */
+        /* LOGO DY BIRU PREMIUM */
         .brand-container {
             text-align: center;
             margin-bottom: 25px;
-            position: relative;
         }
 
         .logo-box {
-            width: 75px;
-            height: 75px;
-            background: linear-gradient(135deg, #0072ff, var(--primary-neon));
-            border-radius: 22px;
-            margin: 0 auto 12px auto;
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--deep-blue), var(--primary-blue));
+            border-radius: 24px;
+            margin: 0 auto 14px auto;
             display: flex;
             align-items: center;
             justify-content: center;
-            box-shadow: 0 0 25px rgba(0, 210, 255, 0.4);
+            box-shadow: 0 0 30px rgba(0, 210, 255, 0.5);
             border: 2px solid rgba(255, 255, 255, 0.2);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-6px); }
+            100% { transform: translateY(0px); }
         }
 
         .logo-box span {
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 800;
             color: white;
             letter-spacing: -1px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 8px rgba(0,0,0,0.4);
         }
 
         .brand-container h1 {
-            font-size: 26px;
+            font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(to right, #ffffff, #94a3b8);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: #ffffff;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 1.5px;
         }
 
         .brand-container p {
@@ -83,40 +87,41 @@
             margin-top: 4px;
         }
 
-        /* TRUST BADGES ELEMENT */
+        /* TEXT UNTUK BIKIN ORANG PERCAYA (TRUST BANNER) */
         .trust-banner {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 8px;
-            background: rgba(19, 26, 46, 0.6);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            border-radius: 12px;
-            padding: 10px;
+            background: rgba(15, 22, 38, 0.6);
+            border: 1px solid rgba(0, 210, 255, 0.15);
+            border-radius: 14px;
+            padding: 12px;
             margin-bottom: 25px;
             text-align: center;
         }
 
         .trust-item {
             font-size: 11px;
-            color: #94a3b8;
+            color: #cbd5e1;
             font-weight: 600;
         }
 
         .trust-item i {
-            color: var(--primary-neon);
-            margin-bottom: 4px;
+            color: var(--primary-blue);
+            margin-bottom: 6px;
             display: block;
-            font-size: 14px;
+            font-size: 16px;
+            text-shadow: 0 0 8px rgba(0, 210, 255, 0.5);
         }
 
-        /* PANEL BOX BASE */
+        /* PANEL BOX MODERN */
         .panel {
             background: var(--bg-card);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 20px;
             padding: 20px;
             margin-bottom: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.25);
         }
 
         .panel-title {
@@ -126,12 +131,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            color: #cbd5e1;
+            color: #e2e8f0;
         }
 
         .panel-title .badge-num {
-            background: var(--primary-neon);
-            color: #090d16;
+            background: var(--primary-blue);
+            color: #070b14;
             width: 22px;
             height: 22px;
             border-radius: 50%;
@@ -142,7 +147,7 @@
             font-weight: 800;
         }
 
-        /* 1. SELECT GAME CARD GRID */
+        /* GRID INPUT CATEGORY GAME */
         .game-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
@@ -150,13 +155,13 @@
         }
 
         .game-card {
-            background: rgba(9, 13, 22, 0.6);
+            background: rgba(7, 11, 20, 0.5);
             border: 2px solid transparent;
             border-radius: 14px;
-            padding: 15px 10px;
+            padding: 16px 10px;
             text-align: center;
             cursor: pointer;
-            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.25s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -166,7 +171,6 @@
         .game-card i {
             font-size: 24px;
             color: #475569;
-            transition: color 0.25s;
         }
 
         .game-card span {
@@ -176,29 +180,20 @@
         }
 
         .game-card.active {
-            border-color: var(--primary-neon);
-            background: linear-gradient(180deg, rgba(0, 210, 255, 0.05), rgba(0, 210, 255, 0.15));
-            box-shadow: 0 0 15px rgba(0, 210, 255, 0.15);
+            border-color: var(--primary-blue);
+            background: linear-gradient(180deg, rgba(0, 210, 255, 0.02), rgba(0, 210, 255, 0.12));
+            box-shadow: 0 0 15px rgba(0, 210, 255, 0.2);
         }
 
-        .game-card.active i {
-            color: var(--primary-neon);
-        }
+        .game-card.active i { color: var(--primary-blue); }
+        .game-card.active span { color: white; }
 
-        .game-card.active span {
-            color: white;
-        }
-
-        /* FORM FIELD ELEMENT */
-        .input-box {
-            position: relative;
-        }
-
+        /* DATA INPUT STYLE */
         .input-box input {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(9, 13, 22, 0.8);
-            border: 1px solid #222f4d;
+            background: rgba(7, 11, 20, 0.7);
+            border: 1px solid #1e293b;
             border-radius: 12px;
             color: white;
             font-size: 15px;
@@ -208,31 +203,41 @@
 
         .input-box input:focus {
             outline: none;
-            border-color: var(--primary-neon);
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.2);
+            border-color: var(--primary-blue);
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
         }
 
-        /* 3. DIAMOND NOMINAL ITEM */
+        /* NOMINAL CARDS GRID */
         .nominal-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 10px;
+            max-height: 380px;
+            overflow-y: auto;
+            padding-right: 4px;
+        }
+
+        /* Custom Scrollbar untuk pilihan Diamond */
+        .nominal-grid::-webkit-scrollbar {
+            width: 6px;
+        }
+        .nominal-grid::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
         }
 
         .nominal-card {
-            background: rgba(9, 13, 22, 0.6);
-            border: 1px solid #222f4d;
+            background: rgba(7, 11, 20, 0.5);
+            border: 1px solid #1e293b;
             border-radius: 12px;
             padding: 14px 10px;
             cursor: pointer;
             transition: all 0.2s;
-            position: relative;
-            overflow: hidden;
         }
 
         .nominal-card .val {
             display: block;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #f1f5f9;
             margin-bottom: 4px;
@@ -242,41 +247,37 @@
             display: block;
             font-size: 12px;
             font-weight: 600;
-            color: var(--primary-neon);
+            color: var(--primary-blue);
         }
 
         .nominal-card:hover {
-            border-color: rgba(0, 210, 255, 0.5);
+            border-color: rgba(0, 210, 255, 0.4);
         }
 
         .nominal-card.active {
-            background: linear-gradient(135deg, #0052d4, #4364f7);
-            border-color: var(--primary-neon);
-            box-shadow: 0 5px 15px rgba(67, 100, 247, 0.3);
+            background: linear-gradient(135deg, #0044ff, #00bcff);
+            border-color: var(--primary-blue);
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.4);
         }
 
-        .nominal-card.active .price {
-            color: #ffffff;
-        }
+        .nominal-card.active .price { color: #ffffff; }
 
-        /* SELECT MENU CUSTOM */
+        /* SELECT OPTION */
         select {
             width: 100%;
             padding: 14px 16px;
-            background: rgba(9, 13, 22, 0.8);
-            border: 1px solid #222f4d;
+            background: rgba(7, 11, 20, 0.7);
+            border: 1px solid #1e293b;
             border-radius: 12px;
             color: white;
             font-size: 15px;
             font-weight: 600;
-            appearance: none;
-            cursor: pointer;
         }
 
-        /* MODERN ORDER BUTTON WITH GLOW EFFECT */
+        /* PREMIUM CHECKOUT BUTTON */
         .btn-checkout {
             width: 100%;
-            background: linear-gradient(90deg, #22c55e, #10b981);
+            background: linear-gradient(90deg, #0066ff, #00d2ff);
             color: white;
             border: none;
             border-radius: 14px;
@@ -284,26 +285,25 @@
             font-size: 16px;
             font-weight: 800;
             cursor: pointer;
-            box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+            box-shadow: 0 4px 25px rgba(0, 210, 255, 0.35);
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
             transition: all 0.3s;
-            margin-top: 10px;
             text-transform: uppercase;
             letter-spacing: 0.5px;
         }
 
         .btn-checkout:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
+            box-shadow: 0 6px 30px rgba(0, 210, 255, 0.5);
         }
 
-        /* LIVE LIVE NOTIFICATION SYSTEM */
+        /* LIVE TRANSACTION NOTIFICATION */
         .live-box {
-            background: rgba(16, 185, 129, 0.1);
-            border: 1px solid rgba(16, 185, 129, 0.2);
+            background: rgba(34, 197, 94, 0.08);
+            border: 1px solid rgba(34, 197, 94, 0.2);
             border-radius: 12px;
             padding: 12px;
             margin-top: 25px;
@@ -321,15 +321,15 @@
         }
 
         .live-text {
-            font-size: 11px;
+            font-size: 11.5px;
             color: #a7f3d0;
             font-weight: 600;
         }
 
         @keyframes pulse {
-            0% { transform: scale(0.9); opacity: 0.6; }
+            0% { transform: scale(0.9); opacity: 0.5; }
             50% { transform: scale(1.2); opacity: 1; }
-            100% { transform: scale(0.9); opacity: 0.6; }
+            100% { transform: scale(0.9); opacity: 0.5; }
         }
 
         .footer-text {
@@ -337,7 +337,6 @@
             margin-top: 30px;
             font-size: 12px;
             color: #475569;
-            font-weight: 500;
         }
     </style>
 </head>
@@ -350,21 +349,21 @@
             <span>DY</span>
         </div>
         <h1>Day Market</h1>
-        <p>Top Up Games Instant & Legal Paling Hemat Se-Indonesia</p>
+        <p>Top Up Otomatis 24 Jam • Murah • Aman & Terpercaya</p>
     </div>
 
     <div class="trust-banner">
-        <div class="trust-item">
-            <i class="fa-solid fa-bolt"></i>
-            Proses 1 Menit
-        </div>
         <div class="trust-item">
             <i class="fa-solid fa-shield-halved"></i>
             100% Legal & Aman
         </div>
         <div class="trust-item">
+            <i class="fa-solid fa-bolt"></i>
+            Proses Otomatis
+        </div>
+        <div class="trust-item">
             <i class="fa-solid fa-headset"></i>
-            Layanan CS 24/7
+            Garansi Anti-Minus
         </div>
     </div>
 
@@ -378,15 +377,15 @@
                 <span>Free Fire</span>
             </div>
             <div class="game-card" onclick="switchGame('ml', this)">
-                <i class="fa-solid fa-sword"></i>
+                <i class="fa-solid fa-gamepad"></i>
                 <span>Mobile Legends</span>
             </div>
             <div class="game-card" onclick="switchGame('pubg', this)">
-                <i class="fa-solid fa-gun"></i>
+                <i class="fa-solid fa-crosshairs"></i>
                 <span>PUBG Mobile</span>
             </div>
             <div class="game-card" onclick="switchGame('hok', this)">
-                <i class="fa-solid fa-shield-cat"></i>
+                <i class="fa-solid fa-shield-halved"></i>
                 <span>Honor of Kings</span>
             </div>
         </div>
@@ -394,7 +393,7 @@
 
     <div class="panel">
         <div class="panel-title">
-            <span class="badge-num">2</span> Lengkapi Data Akun
+            <span class="badge-num">2</span> Lengkapi Data Akun Target
         </div>
         <div class="input-box">
             <input type="text" id="targetId" placeholder="Masukkan ID Game & Server (Contoh: 2513759655)">
@@ -414,10 +413,10 @@
             <span class="badge-num">4</span> Metode Pembayaran
         </div>
         <select id="paymentMethod">
-            <option value="QRIS (Instan Otomatis)">QRIS (Scan Bebas Semua Aplikasi)</option>
-            <option value="DANA Dompet Digital">DANA</option>
-            <option value="OVO Balance">OVO</option>
-            <option value="GOPAY Transfer">GOPAY</option>
+            <option value="QRIS Instan">QRIS (Gopay, OVO, DANA, ShopeePay, m-Banking)</option>
+            <option value="DANA Dompet Digital">DANA Transfer</option>
+            <option value="OVO Balance">OVO Transfer</option>
+            <option value="GOPAY">GOPAY Transfer</option>
         </select>
     </div>
 
@@ -427,58 +426,79 @@
 
     <div class="live-box">
         <div class="live-dot"></div>
-        <div class="live-text" id="liveNotif">Memuat riwayat pembelian terbaru di Day Market...</div>
+        <div class="live-text" id="liveNotif">Menghubungkan ke server Day Market...</div>
     </div>
 
     <div class="footer-text">
-        &copy; 2026 Day Market. Dikembangkan dengan standar sistem keamanan premium.
+        &copy; 2026 Day Market. Hak Cipta Dilindungi.
     </div>
 
 </div>
 
 <script>
-    // ⚠️ PENTING: Ganti nomor di bawah ini dengan nomor WA toko Anda sendiri!
+    // ⚠️ SILAKAN GANTI DENGAN NOMOR WA ANDA DI SINI
     const WA_ADMIN_STORE = "6287736058793"; 
 
-    // DATA BASE DAFTAR GAME DAN HARGA JUAL TOKO ANDA (Silakan edit nominal & harga jual Anda di sini)
+    // DATABASE ALL GAMES DENGAN VARIAN LENGKAP + BIAR ANDA UNTUNG BANYAK
     const databaseGame = {
         ff: {
             name: "Free Fire",
             items: [
-                { qty: "50 Diamonds", price: "Rp 8.000" },
-                { qty: "70 Diamonds", price: "Rp 11.000" },
-                { qty: "140 Diamonds", price: "Rp 21.000" },
-                { qty: "355 Diamonds", price: "Rp 52.000" },
-                { qty: "720 Diamonds", price: "Rp 103.000" },
-                { qty: "1.440 Diamonds", price: "Rp 200.000" }
+                { qty: "10 Diamonds", price: "Rp 3.900" },
+                { qty: "12 Diamonds", price: "Rp 4.200" },
+                { qty: "15 Diamonds", price: "Rp 5.200" },
+                { qty: "20 Diamonds", price: "Rp 5.900" },
+                { qty: "25 Diamonds", price: "Rp 7.000" },
+                { qty: "30 Diamonds", price: "Rp 8.000" },
+                { qty: "50 Diamonds", price: "Rp 10.500" },
+                { qty: "70 Diamonds", price: "Rp 13.000" },
+                { qty: "140 Diamonds", price: "Rp 24.000" },
+                { qty: "355 Diamonds", price: "Rp 56.500" },
+                { qty: "720 Diamonds", price: "Rp 109.000" },
+                { qty: "1.440 Diamonds", price: "Rp 215.000" },
+                { qty: "2.000 Diamonds", price: "Rp 295.000" }
             ]
         },
         ml: {
             name: "Mobile Legends",
             items: [
+                { qty: "11 Diamonds (Receh)", price: "Rp 4.500" },
+                { qty: "14 Diamonds", price: "Rp 5.500" },
+                { qty: "18 Diamonds", price: "Rp 6.800" },
                 { qty: "36 Diamonds", price: "Rp 11.500" },
+                { qty: "53 Diamonds", price: "Rp 16.500" },
                 { qty: "74 Diamonds", price: "Rp 22.000" },
-                { qty: "222 Diamonds", price: "Rp 64.000" },
-                { qty: "370 Diamonds", price: "Rp 105.000" },
-                { qty: "966 Diamonds", price: "Rp 265.000" }
+                { qty: "110 Diamonds", price: "Rp 33.000" },
+                { qty: "222 Diamonds", price: "Rp 65.000" },
+                { qty: "370 Diamonds", price: "Rp 108.000" },
+                { qty: "568 Diamonds", price: "Rp 160.000" },
+                { qty: "966 Diamonds", price: "Rp 270.000" },
+                { qty: "2010 Diamonds", price: "Rp 540.000" }
             ]
         },
         pubg: {
             name: "PUBG Mobile",
             items: [
-                { qty: "30 Unknown Cash", price: "Rp 7.500" },
-                { qty: "60 Unknown Cash", price: "Rp 14.000" },
-                { qty: "325 Unknown Cash", price: "Rp 68.000" },
-                { qty: "660 Unknown Cash", price: "Rp 135.000" }
+                { qty: "10 UC", price: "Rp 3.000" },
+                { qty: "30 UC", price: "Rp 8.000" },
+                { qty: "60 UC", price: "Rp 14.500" },
+                { qty: "120 UC", price: "Rp 28.000" },
+                { qty: "325 UC", price: "Rp 72.000" },
+                { qty: "660 UC", price: "Rp 142.000" },
+                { qty: "1800 UC", price: "Rp 375.000" }
             ]
         },
         hok: {
             name: "Honor of Kings",
             items: [
-                { qty: "17 Tokens", price: "Rp 5.000" },
-                { qty: "88 Tokens", price: "Rp 23.500" },
-                { qty: "257 Tokens", price: "Rp 66.000" },
-                { qty: "432 Tokens", price: "Rp 110.000" }
+                { qty: "8 Tokens", price: "Rp 3.000" },
+                { qty: "17 Tokens", price: "Rp 5.500" },
+                { qty: "44 Tokens", price: "Rp 13.000" },
+                { qty: "88 Tokens", price: "Rp 24.500" },
+                { qty: "257 Tokens", price: "Rp 68.000" },
+                { qty: "432 Tokens", price: "Rp 115.000" },
+                { qty: "872 Tokens", price: "Rp 225.000" },
+                { qty: "1230 Tokens", price: "Rp 315.000" }
             ]
         }
     };
@@ -487,7 +507,6 @@
     let nominalTerpilih = "";
     let hargaTerpilih = "";
 
-    // Fungsi mengganti game pilihan pembeli
     function switchGame(gameKey, element) {
         document.querySelectorAll('.game-card').forEach(card => card.classList.remove('active'));
         element.classList.add('active');
@@ -497,7 +516,6 @@
         renderNominal();
     }
 
-    // Fungsi menampilkan daftar item sesuai game yang diklik
     function renderNominal() {
         const container = document.getElementById('nominalContainer');
         container.innerHTML = "";
@@ -516,7 +534,6 @@
         });
     }
 
-    // Fungsi pengiriman form data terenkripsi anti-gagal ke WA
     function prosesCheckout() {
         const inputId = document.getElementById('targetId').value.trim();
         const payment = document.getElementById('paymentMethod').value;
@@ -542,20 +559,17 @@
         window.open(waLinkFull, '_blank');
     }
 
-    // Sistem riwayat transaksi berjalan buatan (psikologi marketing toko ramai)
-    const daftarNamaAcak = ["Rian", "Adit", "Fahmi", "Budi", "Sultan", "Mhd_FF", "Zaki", "Putra", "Rizky", "Kevin"];
-    const daftarNominalAcak = ["50 Diamonds", "74 Diamonds", "140 Diamonds", "720 Diamonds", "36 Diamonds", "88 Tokens"];
+    // RIWAYAT LIVE NOTIF ACAK (BIAR MANCING PEMBELI PERCAYA)
+    const daftarNamaAcak = ["Rian", "Adit", "Fahmi", "Budi", "Sultan", "Zaki", "Putra", "Rizky", "Kevin", "Agus", "Wawan", "Amelia", "Desta"];
+    const daftarNominalAcak = ["10 Diamonds", "74 Diamonds", "140 Diamonds", "355 Diamonds", "36 Diamonds", "88 Tokens", "325 UC", "15 Diamonds"];
     
     function updateLiveNotification() {
         const nama = daftarNamaAcak[Math.floor(Math.random() * daftarNamaAcak.length)];
         const nominal = daftarNominalAcak[Math.floor(Math.random() * daftarNominalAcak.length)];
-        document.getElementById('liveNotif').innerText = `Live Order: Berhasil memproses kiriman ${nominal} untuk Kak ${nama} 🎉`;
-        
-        // Loop berubah otomatis tiap 7 detik
-        setTimeout(updateLiveNotification, 7000);
+        document.getElementById('liveNotif').innerText = `Live Transaksi: Sukses memproses pengiriman ${nominal} untuk Kak ${nama}! ✅`;
+        setTimeout(updateLiveNotification, 6000);
     }
 
-    // Jalankan sistem saat website pertama kali dibuka
     renderNominal();
     setTimeout(updateLiveNotification, 2000);
 </script>
