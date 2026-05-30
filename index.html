@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Day Market - Top Up Game</title>
+    <title>Day Market - Top Up Game Resmi & Terpercaya</title>
     <style>
         * {
             margin: 0;
@@ -13,251 +13,241 @@
         }
 
         body {
-            background: linear-gradient(135deg, #0084c7, #004b75);
-            color: #fff;
-            padding: 20px;
+            background: linear-gradient(135deg, #0f172a, #1e1b4b);
+            color: #ffffff;
             min-height: 100vh;
-        }
-
-        header {
-            text-align: center;
-            padding: 30px 10px;
-        }
-
-        header h1 {
-            font-size: 2.5rem;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            margin-bottom: 5px;
-        }
-
-        header p {
-            font-size: 1rem;
-            opacity: 0.9;
+            padding: 20px 12px;
         }
 
         .container {
-            max-width: 800px;
+            max-width: 500px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.1);
+            background: rgba(30, 41, 59, 0.7);
+            border-radius: 16px;
+            padding: 24px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(10px);
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 24px;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            color: #38bdf8;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 4px;
+        }
+
+        .header p {
+            font-size: 12px;
+            color: #94a3b8;
         }
 
         .form-group {
-            margin-bottom: 20px;
+            margin-bottom: 16px;
         }
 
         label {
             display: block;
-            margin-bottom: 8px;
+            font-size: 14px;
             font-weight: 600;
-            font-size: 0.95rem;
+            margin-bottom: 6px;
+            color: #cbd5e1;
         }
 
         input, select {
             width: 100%;
             padding: 12px;
-            border: none;
+            background: #0f172a;
+            border: 1px solid #334155;
             border-radius: 8px;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
-            font-size: 1rem;
-            outline: none;
+            color: white;
+            font-size: 14px;
             transition: all 0.3s ease;
         }
 
         input:focus, select:focus {
-            background: #fff;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
+            outline: none;
+            border-color: #38bdf8;
+            box-shadow: 0 0 8px rgba(56, 189, 248, 0.4);
         }
 
-        .grid-inputs {
+        .grid-nominal {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+            margin-top: 6px;
         }
 
-        .btn-submit {
-            width: 100%;
-            background: #25D366;
-            color: white;
-            padding: 15px;
-            border: none;
+        .nominal-item {
+            background: #1e293b;
+            border: 1px solid #334155;
             border-radius: 8px;
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background 0.3s ease;
-            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-            margin-top: 10px;
-        }
-
-        .btn-submit:hover {
-            background: #20ba5a;
-        }
-
-        footer {
+            padding: 12px;
             text-align: center;
-            margin-top: 30px;
-            font-size: 0.85rem;
-            opacity: 0.7;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
 
-        @media (max-width: 600px) {
-            .grid-inputs {
-                grid-template-columns: 1fr;
-            }
+        .nominal-item:hover {
+            border-color: #38bdf8;
+            background: rgba(56, 189, 248, 0.1);
+        }
+
+        .nominal-item.active {
+            background: #38bdf8;
+            border-color: #38bdf8;
+            color: #0f172a;
+            font-weight: bold;
+        }
+
+        .nominal-item span {
+            display: block;
+            font-size: 14px;
+        }
+
+        .nominal-item small {
+            font-size: 11px;
+            opacity: 0.8;
+        }
+
+        .btn-order {
+            width: 100%;
+            background: #22c55e;
+            color: white;
+            border: none;
+            padding: 14px;
+            font-size: 16px;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background 0.3s ease;
+        }
+
+        .btn-order:hover {
+            background: #16a34a;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 24px;
+            font-size: 11px;
+            color: #64748b;
         }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>DAY MARKET</h1>
-        <p>Top Up Game Cepat, Aman, dan Terpercaya</p>
-    </header>
-
-    <div class="container">
-        <form id="topupForm">
-            <div class="form-group">
-                <label for="game">Pilih Game</label>
-                <select id="game" required onchange="updateNominal()">
-                    <option value="">-- Pilih Game Anda --</option>
-                    <option value="Mobile Legends">Mobile Legends</option>
-                    <option value="Free Fire">Free Fire</option>
-                    <option value="PUBG Mobile">PUBG Mobile</option>
-                    <option value="Honor of Kings">Honor of Kings</option>
-                </select>
-            </div>
-
-            <div class="form-group grid-inputs">
-                <div>
-                    <label for="userId">User ID / Karakter ID</label>
-                    <input type="text" id="userId" placeholder="Masukkan ID" required>
-                </div>
-                <div>
-                    <label for="zoneId">Zone ID / Server ID (Jika Ada)</label>
-                    <input type="text" id="zoneId" placeholder="Contoh: 1234 (Opsional)">
-                </div>
-            </div>
-
-            <div class="form-group">
-                <label for="nominal">Pilih Nominal / Diamonds</label>
-                <select id="nominal" required>
-                    <option value="">-- Pilih Game Terlebih Dahulu --</option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="payment">Metode Pembayaran</label>
-                <select id="payment" required>
-                    <option value="">-- Pilih Metode Pembayaran --</option>
-                    <option value="Dana">DANA</option>
-                    <option value="OVO">OVO</option>
-                    <option value="Gopay">GOPAY</option>
-                    <option value="Transfer Bank">Transfer Bank (BCA/Mandiri)</option>
-                </select>
-            </div>
-
-            <button type="submit" class="btn-submit">Kirim Order via WhatsApp</button>
-        </form>
+<div class="container">
+    <div class="header">
+        <h1>Day Market</h1>
+        <p>Top Up Free Fire Cepat, Murah & Aman</p>
     </div>
 
-    <footer>
+    <div class="form-group">
+        <label for="userId">Masukkan User ID Game</label>
+        <input type="number" id="userId" placeholder="Contoh: 2513759655" required>
+    </div>
+
+    <div class="form-group">
+        <label>Pilih Nominal Diamond</label>
+        <div class="grid-nominal" id="nominalGroup">
+            <div class="nominal-item" onclick="selectNominal(this, '50 Diamonds', 'Rp 8.000')">
+                <span>50 Diamonds</span>
+                <small>Rp 8.000</small>
+            </div>
+            <div class="nominal-item" onclick="selectNominal(this, '70 Diamonds', 'Rp 11.000')">
+                <span>70 Diamonds</span>
+                <small>Rp 11.000</small>
+            </div>
+            <div class="nominal-item" onclick="selectNominal(this, '140 Diamonds', 'Rp 21.000')">
+                <span>140 Diamonds</span>
+                <small>Rp 21.000</small>
+            </div>
+            <div class="nominal-item" onclick="selectNominal(this, '355 Diamonds', 'Rp 52.000')">
+                <span>355 Diamonds</span>
+                <small>Rp 52.000</small>
+            </div>
+            <div class="nominal-item" onclick="selectNominal(this, '720 Diamonds', 'Rp 103.000')">
+                <span>720 Diamonds</span>
+                <small>Rp 103.000</small>
+            </div>
+            <div class="nominal-item" onclick="selectNominal(this, '1.440 Diamonds', 'Rp 200.000')">
+                <span>1.440 Diamonds</span>
+                <small>Rp 200.000</small>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="payment">Metode Pembayaran</label>
+        <select id="payment">
+            <option value="DANA">DANA</option>
+            <option value="OVO">OVO</option>
+            <option value="GOPAY">GOPAY</option>
+            <option value="QRIS">QRIS (All e-Wallet)</option>
+        </select>
+    </div>
+
+    <button class="btn-order" onclick="kirimOrder()">
+        🚀 Kirim Orderan via WhatsApp
+    </button>
+
+    <div class="footer">
         &copy; 2026 Day Market. All Rights Reserved.
-    </footer>
+    </div>
+</div>
 
-    <script>
-        // Daftar Nominal Lengkap (Harga perkiraan, silakan sesuaikan dengan harga modal kamu)
-        const daftarNominal = {
-            "Free Fire": [
-                { teks: "50 Diamonds - Rp 8.000", nilai: "50 Diamonds" },
-                { teks: "70 Diamonds - Rp 10.000", nilai: "70 Diamonds" },
-                { teks: "140 Diamonds - Rp 20.000", nilai: "140 Diamonds" },
-                { teks: "355 Diamonds - Rp 50.000", nilai: "355 Diamonds" },
-                { teks: "720 Diamonds - Rp 100.000", nilai: "720 Diamonds" },
-                { teks: "1.440 Diamonds - Rp 200.000", nilai: "1.440 Diamonds" },
-                { teks: "2.000 Diamonds - Rp 275.000", nilai: "2.000 Diamonds" },
-                { teks: "2.880 Diamonds - Rp 390.000", nilai: "2.880 Diamonds" },
-                { teks: "3.600 Diamonds - Rp 490.000", nilai: "3.600 Diamonds" },
-                { teks: "5.760 Diamonds - Rp 770.000", nilai: "5.760 Diamonds" },
-                { teks: "7.290 Diamonds - Rp 980.000", nilai: "7.290 Diamonds" },
-                { teks: "Membership Mingguan - Rp 33.000", nilai: "Membership Mingguan" },
-                { teks: "Membership Bulanan - Rp 149.000", nilai: "Membership Bulanan" }
-            ],
-            "Mobile Legends": [
-                { teks: "86 Diamonds - Rp 20.000", nilai: "86 Diamonds" },
-                { teks: "172 Diamonds - Rp 40.000", nilai: "172 Diamonds" },
-                { teks: "257 Diamonds - Rp 60.000", nilai: "257 Diamonds" },
-                { teks: "514 Diamonds - Rp 115.000", nilai: "514 Diamonds" },
-                { teks: "706 Diamonds - Rp 155.000", nilai: "706 Diamonds" },
-                { teks: "1.050 Diamonds - Rp 235.000", nilai: "1.050 Diamonds" },
-                { teks: "2.195 Diamonds - Rp 470.000", nilai: "2.195 Diamonds" },
-                { teks: "3.688 Diamonds - Rp 780.000", nilai: "3.688 Diamonds" },
-                { teks: "Weekly Diamond Pass - Rp 30.000", nilai: "Weekly Diamond Pass" }
-            ],
-            "PUBG Mobile": [
-                { teks: "60 UC - Rp 15.000", nilai: "60 UC" },
-                { teks: "325 UC - Rp 70.000", nilai: "325 UC" },
-                { teks: "660 UC - Rp 140.000", nilai: "660 UC" },
-                { teks: "1.800 UC - Rp 360.000", nilai: "1.800 UC" },
-                { teks: "3.850 UC - Rp 730.000", nilai: "3.850 UC" },
-                { teks: "8.100 UC - Rp 1.450.000", nilai: "8.100 UC" }
-            ],
-            "Honor of Kings": [
-                { teks: "80 Tokens - Rp 16.000", nilai: "80 Tokens" },
-                { teks: "240 Tokens - Rp 48.000", nilai: "240 Tokens" },
-                { teks: "400 Tokens - Rp 80.000", nilai: "400 Tokens" },
-                { teks: "800 Tokens - Rp 160.000", nilai: "800 Tokens" },
-                { teks: "1.200 Tokens - Rp 240.000", nilai: "1.200 Tokens" },
-                { teks: "2.400 Tokens - Rp 470.000", nilai: "2.400 Tokens" },
-                { teks: "4.800 Tokens - Rp 930.000", nilai: "4.800 Tokens" }
-            ]
-        };
+<script>
+    // ⚠️ GANTI TEKS DI BAWAH INI JADI NOMOR WHATSAPP ANDA (Wajib pakai kode negara 62)
+    const NOMOR_WA_ADMIN = "628xxxxxxxxxx"; 
 
-        function updateNominal() {
-            const gameSelect = document.getElementById("game");
-            const nominalSelect = document.getElementById("nominal");
-            const gameTerpilih = gameSelect.value;
+    let nominalTerpilih = "";
+    let hargaTerpilih = "";
 
-            nominalSelect.innerHTML = '<option value="">-- Pilih Nominal --</option>';
+    function selectNominal(element, nominal, harga) {
+        const items = document.querySelectorAll('.nominal-item');
+        items.forEach(item => item.classList.remove('active'));
+        element.classList.add('active');
+        
+        nominalTerpilih = nominal;
+        hargaTerpilih = harga;
+    }
 
-            if (gameTerpilih && daftarNominal[gameTerpilih]) {
-                daftarNominal[gameTerpilih].forEach(item => {
-                    const option = document.createElement("option");
-                    option.value = item.teks; // Mengirimkan Teks lengkap termasuk harga ke WA
-                    option.text = item.teks;
-                    nominalSelect.appendChild(option);
-                });
-            } else {
-                nominalSelect.innerHTML = '<option value="">-- Pilih Game Terlebih Dahulu --</option>';
-            }
+    function kirimOrder() {
+        const idUser = document.getElementById('userId').value;
+        const metodeBayar = document.getElementById('payment').value;
+
+        if (!idUser) {
+            alert('Mohon masukkan User ID Game Anda terlebih dahulu!');
+            return;
+        }
+        if (!nominalTerpilih) {
+            alert('Mohon pilih nominal Diamond yang ingin dibeli!');
+            return;
         }
 
-        document.getElementById("topupForm").addEventListener("submit", function(e) {
-            e.preventDefault();
+        // Penyusunan teks pesan otomatis yang rapi
+        const teksPesan = "Halo Day Market, saya mau top-up game:\n\n" +
+                          "🎮 *Game:* Free Fire\n" +
+                          "🆔 *User ID:* " + idUser + "\n" +
+                          "🌐 *Server:* -\n" +
+                          "💎 *Nominal:* " + nominalTerpilih + "\n" +
+                          "💰 *Harga:* " + hargaTerpilih + "\n" +
+                          "💳 *Metode:* " + metodeBayar;
 
-            const nomorWa = "6287873686429"; 
-            const game = document.getElementById("game").value;
-            const userId = document.getElementById("userId").value;
-            const zoneId = document.getElementById("zoneId").value || "-";
-            const nominal = document.getElementById("nominal").value;
-            const payment = document.getElementById("payment").value;
+        // FITUR UTAMA: Mengunci teks agar aman dan TIDAK KEPOTONG di Android
+        const linkWhatsApp = "https://api.whatsapp.com/send?phone=" + NOMOR_WA_ADMIN + "&text=" + encodeURIComponent(teksPesan);
 
-            const pesan = `Halo Day Market, saya mau top-up game:%0A%0A` +
-                          `🎮 *Game:* ${game}%0A` +
-                          `🆔 *User ID:* ${userId}%0A` +
-                          `🌐 *Zone/Server:* ${zoneId}%0A` +
-                          `💎 *Nominal & Harga:* ${nominal}%0A` +
-                          `💳 *Metode Pembayaran:* ${payment}%0A%0A` +
-                          `Mohon segera diproses ya, terima kasih!`;
+        window.open(linkWhatsApp, '_blank');
+    }
+</script>
 
-            window.open(`https://api.whatsapp.com/send?phone=${nomorWa}&text=${pesan}`, '_blank');
-        });
-    </script>
 </body>
 </html>
